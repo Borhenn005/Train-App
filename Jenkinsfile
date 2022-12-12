@@ -45,8 +45,8 @@ pipeline {
                 }
             }
         }
-       
-        stage('Build And Deploy Docker Image'){
+
+            stage('Build And Deploy Docker Image'){
                     steps{
                         script{
                             echo "deploying the application"
@@ -59,6 +59,7 @@ pipeline {
                     }
                 }
             }
+
         stage('Docker Compose'){
             steps{
                 script{
