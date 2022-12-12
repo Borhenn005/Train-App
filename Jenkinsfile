@@ -51,7 +51,7 @@ pipeline {
                         script{
                             echo "deploying the application"
                             withCredentials([usernamePassword(credentialsId:'dockerhub',usernameVariable:'USER',passwordVariable:'PWD')]) {
-                                sh "echo $PWD | docker login -u $USER --password-stdin"
+                                sh "docker login -u $USER -p $PWD"
                                 sh "docker build -t paradax/train-app:1.0 ."
                                 sh "docker push paradax/train-app:1.0"
 
