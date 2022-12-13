@@ -52,7 +52,7 @@ pipeline {
                             echo "deploying the application"
                             withCredentials([usernamePassword(credentialsId:'dockerhub',usernameVariable:'USER',passwordVariable:'PWD')]) {
                                 sh "docker login -u $USER -p $PWD"
-                                sh "docker build -t paradax/springapp:latest"
+                                sh "docker build -t paradax/springapp:latest ."
                                 sh "docker push paradax/springapp:latest"
 
                         }
