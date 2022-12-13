@@ -87,4 +87,10 @@ public class RestControllerVoyageur {
         itrainservice.DesaffecterVoyageursTrain(nomGareDepart, nomGareArrivee, heureDepart);
     }
 
+    @GetMapping(value = "/hello")
+        public String hello() {
+
+        return "Hello";
+    }
+
 }
